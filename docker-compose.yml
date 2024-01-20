@@ -1,11 +1,11 @@
 version: '3'
 services:
   client:
-    image: 'charles/multi-client'
+    image: 'charles19/multi-client'
     mem_limit: 128m
     hostname: client
   server:
-    image: 'charles/multi-server'
+    image: 'charles19/multi-server'
     mem_limit: 128m
     hostname: api
     environment:
@@ -17,14 +17,14 @@ services:
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   worker:
-    image: 'charles/multi-worker'
+    image: 'charles19/multi-worker'
     mem_limit: 128m
     hostname: worker
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
   nginx:
-    image: 'charles/multi-nginx'
+    image: 'charles19/multi-nginx'
     mem_limit: 128m
     hostname: nginx
     ports:

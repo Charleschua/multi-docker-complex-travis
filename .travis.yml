@@ -5,23 +5,23 @@ services:
   - docker
 
 before_install:
-  - docker build -t charles/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t charles19/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true charles/react-test npm test
+  - docker run -e CI=true charles19/react-test npm test
 
 after_success:
-  - docker build -t charles/multi-client ./client
-  - docker build -t charles/multi-nginx ./nginx
-  - docker build -t charles/multi-server ./server
-  - docker build -t charles/multi-worker ./worker
+  - docker build -t charles19/multi-client ./client
+  - docker build -t charles19/multi-nginx ./nginx
+  - docker build -t charles19/multi-server ./server
+  - docker build -t charles19/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push charles/multi-client
-  - docker push charles/multi-nginx
-  - docker push charles/multi-server
-  - docker push charles/multi-worker
+  - docker push charles19/multi-client
+  - docker push charles19/multi-nginx
+  - docker push charles19/multi-server
+  - docker push charles19/multi-worker
 
 deploy:
   provider: elasticbeanstalk
