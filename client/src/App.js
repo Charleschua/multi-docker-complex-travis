@@ -17,7 +17,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            Learn React version 2
           </a>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>
@@ -26,7 +26,7 @@ function App() {
           <Route exact path="/" component={Fib} />
           <Route path="/otherpage" component={OtherPage} />
         </div>
-        <p>finished complex travis with small changes again</p>
+        <p>finished complex travis with small changes again version 2</p>
       </div>
     </Router>
   );
